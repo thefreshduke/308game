@@ -2,17 +2,15 @@ package game;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
-public class Infantry extends Piece {
+public class Elephant extends Piece {
 	
 	protected boolean active;
 	private int myFaction;
 	private int myRank;
 	private ImageView myImageView;
 	
-	public Infantry (int faction, int rank, ImageView imageView) {
+	public Elephant (int faction, int rank, ImageView imageView) {
 		myFaction = faction;
 		myRank = rank;
 		myImageView = imageView;

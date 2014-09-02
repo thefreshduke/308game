@@ -1,18 +1,38 @@
 package game;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 public class Cavalry extends Piece {
 	
-	public static int faction;
-	public static int rank = 3;
+	private int myFaction;
+	private int myRank;
+	private ImageView myImageView;
 	
-	// overrides calculateLegalMoves in Piece.java
-    public void calculateLegalMoves() {
-        if (active) {
-        	
-        }
+	public Cavalry (int faction, int rank, ImageView imageView) {
+		myFaction = faction;
+		myRank = rank;
+		myImageView = imageView;
+	}
+	
+	public void checkPieceStatus() {
+		super.checkPieceStatus();
+	}
+	
+//    public void calculateLegalMoves() {
+//        int[] deltaX = {1, -1, 0, 0};
+//        int[] deltaY = {0, 0, -1, 1};
+//        Vertex.x = 0;
+//    }
+    
+    public void activatePiece() {
+    	super.activatePiece();
+    	Image image = new Image(getClass().getResourceAsStream("images/infantry.jpg"));
+        myImageView = new ImageView();
+        myImageView.setImage(image);
     }
     
-    public static void main(String[] args) {
-        Cavalry c = new Cavalry();
-    }
+//    public static void main(String[] args) {
+//        Cavalry c = new Cavalry();
+//    }
 }

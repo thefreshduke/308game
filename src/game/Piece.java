@@ -5,9 +5,15 @@ import javafx.scene.image.ImageView;
 public abstract class Piece {
 	
 	protected boolean active;
-	protected int faction;
-	protected int rank;
-	private ImageView imageView;
+	protected int myFaction;
+	protected int myRank;
+	private ImageView myImageView;
+	
+//	public Piece (int faction, int rank, ImageView imageView) {
+//		myFaction = faction;
+//		myRank = rank;
+//		myImageView = imageView;
+//	}
 	
 	public void checkPieceStatus() {
         if (active) {
@@ -27,19 +33,19 @@ public abstract class Piece {
 		active = true;
 	}
 
-	public int getFaction() {
-		return faction;
-	}
-
-	public void setFaction(int faction) {
-		this.faction = faction;
-	}
-
-	public int getRank() {
-		return rank;
-	}
-
-	public void setRank(int rank) {
-		this.rank = rank;
-	}
+//	public int getFaction() {
+//		return faction;
+//	}
+//
+//	public void setFaction(int faction) {
+//		this.faction = faction;
+//	}
+//
+//	public int getRank() {
+//		return rank;
+//	}
+//
+//	public void setRank(int rank) {
+//		this.rank = rank;
+//	}
 }

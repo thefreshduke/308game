@@ -82,12 +82,12 @@ public class AmbushChess extends Application
         System.out.println(clickX);
         double clickY = e.getSceneY();
         System.out.println(clickY);
-        for (Vertex v : verticesAndPiecesMap.keySet()) {
-        	double xPos = v.x + 30;
-        	double yPos = v.y + 30;
-        	double d = Math.sqrt(Math.pow(clickX - xPos, 2.0) + Math.pow(clickY - yPos, 2.0));
-        	if (d < 45) {
-        		if (verticesAndPiecesMap.get(v) != null) {
+//        for (Vertex v : verticesAndPiecesMap.keySet()) {
+//        	double xPos = v.x + 30;
+//        	double yPos = v.y + 30;
+//        	double d = Math.sqrt(Math.pow(clickX - xPos, 2.0) + Math.pow(clickY - yPos, 2.0));
+//        	if (d < 45) {
+//        		if (verticesAndPiecesMap.get(v) != null) {
 //        			if (playersAndFactionsMap.get(gameTurn % 3) == piece.faction) {//number of turns mod 3 is player1/2/3...
 //        				//if player1/2/3 is assigned the faction that matches the selected piece's faction
 //        				//then pieceSelected is true 
@@ -104,9 +104,9 @@ public class AmbushChess extends Application
 //        			else {
 //        				//pick a piece again
 //        			}
-        		}
-        	}
-        }
+//        		}
+//        	}
+//        }
 	}
 
 //	public void movePiece (MouseEvent e) {
