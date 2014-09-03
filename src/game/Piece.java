@@ -25,7 +25,7 @@ public abstract class Piece {
 	}
 
 //	public abstract void calculateLegalMoves();
-	public static void calculateLegalMoves() {
+	public void calculateLegalMoves() {
 		
 	}
 	
@@ -33,19 +33,19 @@ public abstract class Piece {
 		active = true;
 	}
 
-//	public int getFaction() {
-//		return faction;
-//	}
-//
-//	public void setFaction(int faction) {
-//		this.faction = faction;
-//	}
-//
-//	public int getRank() {
-//		return rank;
-//	}
-//
-//	public void setRank(int rank) {
-//		this.rank = rank;
-//	}
+	public int getMyFaction() {
+		return myFaction;
+	}
+
+	public void setMyFaction(int faction) {
+		this.myFaction = faction;
+	}
+
+	public int getMyRank() {
+		return myRank;
+	}
+
+	public void setMyRank(int rank) {
+		this.myRank = rank;
+	}
 }

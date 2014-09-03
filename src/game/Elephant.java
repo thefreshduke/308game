@@ -33,6 +33,22 @@ public class Elephant extends Piece {
         myImageView.setImage(image);
     }
     
+    public int getMyFaction() {
+		return myFaction;
+	}
+
+	public void setMyFaction(int myFaction) {
+		this.myFaction = myFaction;
+	}
+
+	public int getMyRank() {
+		return myRank;
+	}
+
+	public void setMyRank(int myRank) {
+		this.myRank = myRank;
+	}
+    
 //    public static void main(String[] args) {
 //        Infantry i = new Infantry();
 //    }

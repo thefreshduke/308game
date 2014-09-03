@@ -16,8 +16,8 @@ public class Vertex {
 //	private ImageView myImageView;
 	
 	public Vertex (int x, int y, int height, int width, Color c) {
-		myX = x;
-		myY = y;
+		setMyX(x);
+		setMyY(y);
 		myHeight = height;
 		myWidth = width;
 		myColor = c;
@@ -29,5 +29,21 @@ public class Vertex {
 	
 	public Node getNode() {
 		return myVertex;
+	}
+
+	public int getMyX() {
+		return myX;
+	}
+
+	public void setMyX(int myX) {
+		this.myX = myX;
+	}
+
+	public int getMyY() {
+		return myY;
+	}
+
+	public void setMyY(int myY) {
+		this.myY = myY;
 	}
 }

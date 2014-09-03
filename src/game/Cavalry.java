@@ -5,13 +5,15 @@ import javafx.scene.image.ImageView;
 
 public class Cavalry extends Piece {
 	
+	protected boolean isActive;
 	private int myFaction;
 	private int myRank;
 	private ImageView myImageView;
 	
 	public Cavalry (int faction, int rank, ImageView imageView) {
-		myFaction = faction;
-		myRank = rank;
+//		isActive = active;
+		setMyFaction(faction);
+		setMyRank(rank);
 		myImageView = imageView;
 	}
 	
@@ -27,10 +29,26 @@ public class Cavalry extends Piece {
     
     public void activatePiece() {
     	super.activatePiece();
-    	Image image = new Image(getClass().getResourceAsStream("images/infantry.jpg"));
+    	Image image = new Image(getClass().getResourceAsStream("images/cavalry.jpg"));
         myImageView = new ImageView();
         myImageView.setImage(image);
     }
+
+	public int getMyFaction() {
+		return myFaction;
+	}
+
+	public void setMyFaction(int myFaction) {
+		this.myFaction = myFaction;
+	}
+
+	public int getMyRank() {
+		return myRank;
+	}
+
+	public void setMyRank(int myRank) {
+		this.myRank = myRank;
+	}
     
 //    public static void main(String[] args) {
 //        Cavalry c = new Cavalry();

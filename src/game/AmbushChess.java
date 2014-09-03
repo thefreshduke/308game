@@ -44,7 +44,7 @@ public class AmbushChess extends Application
 		scene.setOnMousePressed(new EventHandler<MouseEvent>() {
 	        @Override
 	        public void handle(MouseEvent event) {
-	            selectPiece(event);
+	            myGame.selectPiece(event);
 	        }
 	    });
 		s.setScene(scene);
@@ -76,72 +76,6 @@ public class AmbushChess extends Application
 		}
 	}
 	
-	public void selectPiece (MouseEvent e) {
-		System.out.println("mouse click detected! " + e.getSource());
-        double clickX = e.getSceneX();
-        System.out.println(clickX);
-        double clickY = e.getSceneY();
-        System.out.println(clickY);
-//        for (Vertex v : verticesAndPiecesMap.keySet()) {
-//        	double xPos = v.x + 30;
-//        	double yPos = v.y + 30;
-//        	double d = Math.sqrt(Math.pow(clickX - xPos, 2.0) + Math.pow(clickY - yPos, 2.0));
-//        	if (d < 45) {
-//        		if (verticesAndPiecesMap.get(v) != null) {
-//        			if (playersAndFactionsMap.get(gameTurn % 3) == piece.faction) {//number of turns mod 3 is player1/2/3...
-//        				//if player1/2/3 is assigned the faction that matches the selected piece's faction
-//        				//then pieceSelected is true 
-//        				pieceSelected boolean = true;
-//        				if (active) {
-//        					Piece.calculateLegalMoves(); //or calculateLegalMoves for individual pieces...? Infantry.calculateLegalMoves()
-//        					movePiece(e);
-//        				}
-//        				else {
-//        					individualPiece.activatePiece();
-//        					endTurn();
-//        				}
-//        			}
-//        			else {
-//        				//pick a piece again
-//        			}
-//        		}
-//        	}
-//        }
-	}
-
-//	public void movePiece (MouseEvent e) {
-//		if (pieceSelected) { //create pieceSelected 
-//			double clickX = e.getSceneX();
-//	        double clickY = e.getSceneY();
-//	        for (moves in legalMovesSet) {
-//	        	double xPos = v.x + 30;
-//	        	double yPos = v.y + 30;
-//	        	double d = Math.sqrt(Math.pow(clickX - xPos, 2.0) + Math.pow(clickY - yPos, 2.0));
-//	        	if (d < 45) {
-//	        		if (occupied by enemy) {
-//	        			remove enemy - enemy killed
-//	        		}
-//	        		move piece to new space
-//	        		vacate old space
-//	        		endTurn();
-//	        	}
-//	        }
-//		}
-//	}
-//	
-//	public void endTurn () {
-//		if faction is empty
-//			faction lost
-//			if both factions empty
-//				last faction wins
-//				gameOver();
-//		gameTurn++; //this determines whose turn it is... where to put it for initializing turns?
-//	}
-	
-	public void gameOver () {
-		
-	}
-
 	/**
 	 * Start the program.
 	 */

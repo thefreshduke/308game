@@ -28,10 +28,26 @@ public class Chariot extends Piece {
     
     public void activatePiece() {
     	super.activatePiece();
-    	Image image = new Image(getClass().getResourceAsStream("images/infantry.jpg"));
+    	Image image = new Image(getClass().getResourceAsStream("images/chariot.jpg"));
         myImageView = new ImageView();
         myImageView.setImage(image);
     }
+    
+    public int getMyFaction() {
+		return myFaction;
+	}
+
+	public void setMyFaction(int myFaction) {
+		this.myFaction = myFaction;
+	}
+
+	public int getMyRank() {
+		return myRank;
+	}
+
+	public void setMyRank(int myRank) {
+		this.myRank = myRank;
+	}
     
 //    public static void main(String[] args) {
 //        Infantry i = new Infantry();
