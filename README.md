@@ -1,22 +1,16 @@
 game
 ====
 
-First project for CompSci 308 Spring 2014
+First project for CompSci 308 Fall 2014
 
-<<<<<<< HEAD
-My game will be lame
+Genre: Top-Down Shooter
 
-One more change.
-=======
-Genre: Turn-based strategy
+Name: Balla
 
-Name: Ambush
+Goal: Avoid being hit by green circles
 
-Goal: Eliminate all enemy pieces
+Basic Mechanics: Move up, down, left, and right. Shooting is available in Game 1.
 
-Basic Mechanics: Choose a hidden piece to reveal it or an active piece to move and kill enemy pieces
+Mode 1: Shoot and kill 10 green circles.
 
-Mode 1: 2 players; active pieces move one square at a time and can only kill active enemies based on their rank in a hierarchy
-
-Mode 2: 3 players; active pieces have unique movements and can kill any active enemies if the killing move is legal
->>>>>>> aed0138cf827d3dd9f5af766a943fceb252f9548
+Mode 2: Cross the scene up and down 10 times.
