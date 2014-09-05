@@ -6,28 +6,18 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
-/**
- * This is the main program, it is basically boilerplate to create
- * an animated scene.
- * 
- * @author Robert C. Duvall
- */
-public class BallWorld extends Application
-{
+public class Caesar extends Application {
 	private GameLoop myGame;
-
-	/**
-	 * Set things up at the beginning.
-	 */
+	public static int height = 500;
+	public static int width = 800;
+	
 	@Override
-	public void start (Stage s)
-	{
-		s.setTitle("BallWorld!");
+	public void start (Stage s) {
+		s.setTitle("ALL HAIL");
 		// create your own game here
 		myGame = new GameLoop();
 		// attach game to the stage and display it
-		Scene scene = myGame.init(s, 400, 400);
+		Scene scene = myGame.init(s, width, height);
 		s.setScene(scene);
 		s.show();
 		
@@ -38,12 +28,8 @@ public class BallWorld extends Application
 		animation.getKeyFrames().add(frame);
 		animation.play();
 	}
-
-	/**
-	 * Start the program.
-	 */
-	public static void main(String[] args)
-	{
+	
+	public static void main (String[] args) {
 		launch(args);
 	}
 }
