@@ -9,7 +9,7 @@ Name: Balla
 
 Goal: Avoid being hit by green circles
 
-Basic Mechanics: Move up, down, left, and right. Shooting is available in Game 1.
+Basic Mechanics: Move UP, DOWN, LEFT, and RIGHT with the arrow keys. Shooting with SHIFT is available in Game 1.
 
 Mode 1: Shoot and kill 10 green circles.
 
