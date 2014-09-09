@@ -40,12 +40,13 @@ class GameLoop1 {
 	protected double enemySpeed = 4;
 	protected double ammoSpeed;
 
+	//Creates scene
 	public Scene init (Stage s, int width, int height, Button back) {
 		playerSpeed = 5;
 		ammoSpeed = 15;
 		root = new Group();
 		scene = new Scene(root, width, height, Color.BEIGE);
-		setStage(s);
+		stage = s;
 		shiftReleased = true;
 
 		player = new Player();
@@ -69,6 +70,7 @@ class GameLoop1 {
 		}
 	};
 
+	//updates sprites
 	protected void updateSprites () {
 		numFrame++;
 		keyPressed(scene);
@@ -83,6 +85,7 @@ class GameLoop1 {
 		checkCollision();
 	}
 
+	//sets controls when keys are pressed
 	public void keyPressed (Scene scene) {
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
@@ -117,6 +120,7 @@ class GameLoop1 {
 		});
 	}
 
+	//sets controls when keys are released
 	public void keyReleased (Scene scene) {
 		scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
 			@Override
@@ -145,6 +149,7 @@ class GameLoop1 {
 		});
 	}
 
+	//moves player and shoots
 	protected void updatePlayer () {
 		if (movePlayerUp) {
 			if (balla.getCenterY() > balla.getRadius()) {
@@ -181,6 +186,7 @@ class GameLoop1 {
 		}
 	}
 
+	//player attacks
 	protected void attack () {
 		if (shoot) {
 			ammo = new Ammo();
@@ -194,6 +200,7 @@ class GameLoop1 {
 		}
 	}
 
+	//updating ammo
 	protected void moveAmmo () {
 		for (Node a : ammoGroup.getChildren()) {
 			Circle aCircle = (Circle) a;
@@ -208,6 +215,7 @@ class GameLoop1 {
 		}
 	}
 
+	//spawning enemy
 	protected void spawnEnemy() {
 		if (numFrame % 60 == 20) {
 			r = new Random();
@@ -219,6 +227,7 @@ class GameLoop1 {
 		}
 	}
 
+	//moving enemy
 	protected void moveEnemy () {
 		for (Node e : enemyGroup.getChildren()) {
 			Circle eCircle = (Circle) e;
@@ -233,6 +242,7 @@ class GameLoop1 {
 		}
 	}
 
+	//checking for collisions
 	protected boolean checkCollision() {
 		for (Node e : enemyGroup.getChildren()) {
 			Circle eCircle = (Circle) e;
@@ -263,19 +273,12 @@ class GameLoop1 {
 		return false;
 	}
 
+	//checking for intersections
 	protected boolean intersect(Circle e, Circle a) {
 		Path intersection = (Path) Shape.intersect(e, a);
 		if (!intersection.getElements().isEmpty()) {
 			return true;
 		}
 		return false;
-	}
-
-	public Stage getStage() {
-		return stage;
-	}
-
-	public void setStage(Stage stage) {
-		this.stage = stage;
 	}
 }
