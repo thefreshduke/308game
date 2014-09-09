@@ -120,6 +120,7 @@ class GameLoop2 extends GameLoop1 {
 		}
 	}
 
+	//check to see if player has touched the top or bottom, depending on which one was touched last
 	protected void checkZigZag () {
 		if (!zigzag) {
 			if (balla.getCenterY() < 50) {
