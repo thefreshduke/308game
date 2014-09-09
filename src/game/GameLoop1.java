@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece.
+// Scotty Shaw
+
 package game;
 
 import java.util.Random;
@@ -18,35 +21,32 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 class GameLoop1 {
-	private Group root;
-	private Group ammoGroup = new Group();
-	private Group enemyGroup = new Group();
-	private Circle balla, weapon, baddy;
-	private Player player;
-	private Ammo ammo;
-	private Enemy enemy;
-	private boolean movePlayerUp, movePlayerDown, movePlayerLeft, movePlayerRight;
-	private boolean shoot, shiftReleased, machineGunCheat, gameOver;
-	private Scene scene;
-	private Stage stage;
-	private Random r;
-	private double numFrame;
-	private int score;
-	private Button backButton = new Button();
-	private double playerSpeed;
-	private double enemySpeed;
-	private double ammoSpeed;
+	protected Group root;
+	protected Group ammoGroup = new Group();
+	protected Group enemyGroup = new Group();
+	protected Circle balla, weapon, baddy;
+	protected Player player;
+	protected Ammo ammo;
+	protected Enemy enemy;
+	protected boolean movePlayerUp, movePlayerDown, movePlayerLeft, movePlayerRight;
+	protected boolean shoot, shiftReleased, machineGunCheat, gameOver;
+	protected Scene scene;
+	protected Stage stage;
+	protected Random r;
+	protected double numFrame;
+	protected int score;
+	protected Button backButton = new Button();
+	protected double playerSpeed;
+	protected double enemySpeed = 4;
+	protected double ammoSpeed;
 
 	public Scene init (Stage s, int width, int height, Button back) {
+		playerSpeed = 5;
+		ammoSpeed = 15;
 		root = new Group();
 		scene = new Scene(root, width, height, Color.BEIGE);
 		setStage(s);
 		shiftReleased = true;
-		gameOver = false;
-		score = 0;
-		playerSpeed = 5;
-		enemySpeed = 4;
-		ammoSpeed = 15;
 
 		player = new Player();
 		balla = player.myPlayer(scene.getWidth() / 4, 3 * scene.getHeight() / 4, 20);
@@ -69,7 +69,7 @@ class GameLoop1 {
 		}
 	};
 
-	private void updateSprites () {
+	protected void updateSprites () {
 		numFrame++;
 		keyPressed(scene);
 		keyReleased(scene);
@@ -181,7 +181,7 @@ class GameLoop1 {
 		}
 	}
 
-	private void attack () {
+	protected void attack () {
 		if (shoot) {
 			ammo = new Ammo();
 			weapon = ammo.myAmmo(balla.getCenterX(), balla.getCenterY(), 5);
@@ -194,7 +194,7 @@ class GameLoop1 {
 		}
 	}
 
-	private void moveAmmo () {
+	protected void moveAmmo () {
 		for (Node a : ammoGroup.getChildren()) {
 			Circle aCircle = (Circle) a;
 			if (aCircle.getCenterX() < scene.getWidth() + aCircle.getRadius()) {
@@ -208,7 +208,7 @@ class GameLoop1 {
 		}
 	}
 
-	private void spawnEnemy() {
+	protected void spawnEnemy() {
 		if (numFrame % 60 == 20) {
 			r = new Random();
 			enemy = new Enemy();
@@ -219,7 +219,7 @@ class GameLoop1 {
 		}
 	}
 
-	private void moveEnemy () {
+	protected void moveEnemy () {
 		for (Node e : enemyGroup.getChildren()) {
 			Circle eCircle = (Circle) e;
 			if (eCircle.getCenterX() > -eCircle.getRadius()) {
@@ -233,7 +233,7 @@ class GameLoop1 {
 		}
 	}
 
-	private boolean checkCollision() {
+	protected boolean checkCollision() {
 		for (Node e : enemyGroup.getChildren()) {
 			Circle eCircle = (Circle) e;
 			for (Node a : ammoGroup.getChildren()) {
@@ -263,7 +263,7 @@ class GameLoop1 {
 		return false;
 	}
 
-	private boolean intersect(Circle e, Circle a) {
+	protected boolean intersect(Circle e, Circle a) {
 		Path intersection = (Path) Shape.intersect(e, a);
 		if (!intersection.getElements().isEmpty()) {
 			return true;
